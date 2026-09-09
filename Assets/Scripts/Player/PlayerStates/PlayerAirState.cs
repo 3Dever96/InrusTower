@@ -10,7 +10,7 @@ public class PlayerAirState : PlayerState
 
     public override void UpdateState(PlayerController player)
     {
-        if (!player.Jump || Physics.CheckSphere(player.transform.position + Vector3.up * 1.6f, player.Controller.radius - 0.01f, LayerMask.GetMask("Solid")))
+        if (!player.Jump || Physics.CheckSphere(player.transform.position + Vector3.up * (player.Controller.radius * 3.1f), player.Controller.radius - 0.01f, LayerMask.GetMask("Solid")))
         {
             player.VerticalSpeed = Mathf.Min(0f, player.VerticalSpeed);
         }
@@ -20,7 +20,7 @@ public class PlayerAirState : PlayerState
 
     public override void ChangeState(PlayerController player)
     {
-        if (player.VerticalSpeed <= 0f && Physics.CheckSphere(player.transform.position + Vector3.up * 0.4f, player.Controller.radius - 0.01f, LayerMask.GetMask("Solid")))
+        if (player.VerticalSpeed <= 0f && Physics.CheckSphere(player.transform.position + Vector3.up * (player.Controller.radius - 0.1f), player.Controller.radius - 0.01f, LayerMask.GetMask("Solid")))
         {
             player.SetState(player.GroundState);
         }

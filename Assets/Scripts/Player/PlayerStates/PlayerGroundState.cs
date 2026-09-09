@@ -78,7 +78,7 @@ public class PlayerGroundState : PlayerState
 
     public override void ChangeState(PlayerController player)
     {
-        if (player.VerticalSpeed > 0f || !Physics.CheckSphere(player.transform.position + Vector3.up * 0.4f, player.Controller.radius - 0.01f, LayerMask.GetMask("Solid")))
+        if (player.VerticalSpeed > 0f || !Physics.CheckSphere(player.transform.position + Vector3.up * (player.Controller.radius - 0.1f), player.Controller.radius - 0.01f, LayerMask.GetMask("Solid")))
         {
             player.SetState(player.AirState);
         }
