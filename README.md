@@ -1,6 +1,10 @@
-# Title
+# Inru's Tower
 
 ## Description
+### Explore an ever shifting tower and uncover its dark secrets.
+
+### Inru's Tower is a 3D dungeon delver roguelike.  Explore one room at a time, find and defeat the boss, and make your way up the tower.
+### Perform well in the dungeon to get better items in the shops.
 
 ## Getting Started
 
@@ -9,21 +13,21 @@ These instructions will get you a copy of the project up and running on your loc
 ### Requirements
 
 **Unity Hub**
-**Unity Editor Version:** '6000.3.6f1' (or minimum recommended patch version)
+**Unity Editor Version:** '6000.4.0f1' (or minimum recommended patch version)
 **Target Platform:** 'Windows' (Requires the Windows Build Support module installed via Unity Hub)
 
 ### Installation
 
 1. **Clone the repository:** 
 '''bash
-git clone https://github.com/3Dever96/[ProjectName].git
+git clone https://github.com/3Dever96/InrusTower.git
 '''
 
 2. **Open in Unity**
 * Open **Unity Hub**.
 * Click **"Add Project from Disk"**.
 * Navigate to the cloned directory and select the root folder.
-* Ensure the correct Unity Editor Version ('6000.3.6f1') is selected in the Hub and open the project.
+* Ensure the correct Unity Editor Version ('6000.4.0f1') is selected in the Hub and open the project.
 
 3. **Run the Project:**
 * Once the Editor loads, navigate to the primary scene file (usually in 'Assets/Scenes/').
