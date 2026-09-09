@@ -8,12 +8,17 @@ public class PlayerGroundState : PlayerState
     [SerializeField] private float decel;
     [SerializeField] private float fric;
     [SerializeField] private float turnAngle;
+    [SerializeField] private float jumpSpeed;
 
     private float moveSpeed;
+
+    private bool canJump;
 
     public override void StartState(PlayerController player)
     {
         player.VerticalSpeed = player.stickForce;
+
+        canJump = false;
     }
 
     public override void UpdateState(PlayerController player)
@@ -62,11 +67,21 @@ public class PlayerGroundState : PlayerState
         moveSpeed = player.Move.magnitude * maxSpeed;
 
         player.FaceDirection(player.Direction, player.turnSpeed);
+
+        if (player.Jump && canJump)
+        {
+            player.VerticalSpeed = jumpSpeed;
+        }
+
+        canJump = !player.Jump;
     }
 
     public override void ChangeState(PlayerController player)
     {
-        
+        if (player.VerticalSpeed > 0f || !Physics.CheckSphere(player.transform.position + Vector3.up * 0.4f, player.Controller.radius - 0.01f, LayerMask.GetMask("Solid")))
+        {
+            player.SetState(player.AirState);
+        }
     }
 
     public override void ExitState(PlayerController player)

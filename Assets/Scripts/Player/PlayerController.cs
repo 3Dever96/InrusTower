@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public PlayerState PreviousState {  get; private set; }
 
     [field: SerializeField] public PlayerGroundState GroundState { get; private set; } = new PlayerGroundState();
+    [field: SerializeField] public PlayerAirState AirState { get; private set; } = new PlayerAirState();
 
     // MOVEMENT PROPERTIES
     public Vector3 Direction { get; set; }
