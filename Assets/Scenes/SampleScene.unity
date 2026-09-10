@@ -1643,6 +1643,7 @@ GameObject:
   - component: {fileID: 1163587603}
   - component: {fileID: 1163587602}
   - component: {fileID: 1163587601}
+  - component: {fileID: 1163587604}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -1744,6 +1745,34 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1163587604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163587599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e23fe1a1ac8034f47a5e6a7ac06d1fe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterStats
+  maxHp: 100
+  atk: 1
+  OnSpawn:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDie:
+    m_PersistentCalls:
+      m_Calls: []
+  avatar: {fileID: 506818487}
+  flashTime: 0.15
+  iFrames: 2
+  hitStop: 0.2
+  hitMaterial: {fileID: 0}
 --- !u!1 &1268386542
 GameObject:
   m_ObjectHideFlags: 0
