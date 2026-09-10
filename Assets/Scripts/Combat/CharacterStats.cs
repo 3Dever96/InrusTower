@@ -4,8 +4,9 @@ using UnityEngine.Events;
 
 public class CharacterStats : MonoBehaviour
 {
+    public float CurrentHp { get; private set; }
+
     [SerializeField] private float maxHp;
-    [SerializeField] private float currentHp;
     [SerializeField] private float atk;
 
     public UnityEvent OnSpawn;
@@ -21,8 +22,7 @@ public class CharacterStats : MonoBehaviour
 
     private void Start()
     {
-        currentHp = maxHp;
-        OnSpawn?.Invoke();
+        CurrentHp = maxHp;
     }
 
     private void OnEnable()
@@ -34,9 +34,11 @@ public class CharacterStats : MonoBehaviour
     {
         if (!isInvincible)
         {
-            currentHp = Mathf.Clamp(currentHp - damage, 0, maxHp);
+            CurrentHp = Mathf.Clamp(CurrentHp - damage, 0, maxHp);
 
-            if (currentHp > 0f)
+            OnHit?.Invoke();
+
+            if (CurrentHp > 0f)
             {
                 StartCoroutine(HitEffect());
             }
