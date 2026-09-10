@@ -14,11 +14,11 @@ TagManager:
   - Player
   - EventTrigger
   - Hazard
-  - 
-  - 
-  - 
-  - 
-  - 
+  - PlayerHurtbox
+  - PlayerHitbox
+  - Enemy
+  - EnemyHurtbox
+  - EnemyHitbox
   - 
   - 
   - 
