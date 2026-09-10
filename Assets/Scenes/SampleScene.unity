@@ -468,7 +468,7 @@ MonoBehaviour:
     DefaultMode: 2
   DefaultBlend:
     Style: 1
-    Time: 2
+    Time: 1
     CustomCurve:
       serializedVersion: 2
       m_Curve: []
@@ -2942,6 +2942,6 @@ SceneRoots:
   - {fileID: 1023056442}
   - {fileID: 410087041}
   - {fileID: 832575519}
+  - {fileID: 1358568266}
   - {fileID: 2055300440}
   - {fileID: 1163587600}
-  - {fileID: 1358568266}
