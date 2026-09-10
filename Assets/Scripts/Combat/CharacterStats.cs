@@ -5,7 +5,7 @@ using UnityEngine.Events;
 public class CharacterStats : MonoBehaviour
 {
     [SerializeField] private float maxHp;
-    private float currentHp;
+    [SerializeField] private float currentHp;
     [SerializeField] private float atk;
 
     public UnityEvent OnSpawn;
@@ -21,9 +21,8 @@ public class CharacterStats : MonoBehaviour
 
     private void Start()
     {
+        currentHp = maxHp;
         OnSpawn?.Invoke();
-
-        StartCoroutine(HitEffect());
     }
 
     private void OnEnable()
@@ -37,7 +36,14 @@ public class CharacterStats : MonoBehaviour
         {
             currentHp = Mathf.Clamp(currentHp - damage, 0, maxHp);
 
-            StartCoroutine(HitEffect());
+            if (currentHp > 0f)
+            {
+                StartCoroutine(HitEffect());
+            }
+            else
+            {
+                OnDie?.Invoke();
+            }
         }
     }
 
@@ -88,5 +94,4 @@ public class CharacterStats : MonoBehaviour
         avatar.gameObject.SetActive(true); // Ensure character is visible when done
         isInvincible = false;
     }
-
 }
